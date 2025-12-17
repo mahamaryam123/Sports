@@ -1,0 +1,513 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@400..800&family=Itim&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+*::selection{
+    background-color: white;
+    color: #95c11e;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #111827;
+
+  perspective: 800px;
+  font-family: "Montserrat", sans-serif;
+
+}
+/* Page (window) scrollbar - WebKit/Blink */
+html, body {
+  /* Firefox fallback */
+  scrollbar-width: thin; /* auto | thin | none */
+  scrollbar-color: #ffffff #95c11e;
+   /* thumb then track */
+   overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  width: 12px; /* vertical scrollbar width */
+  height: 12px; /* horizontal scrollbar height */
+}
+body::-webkit-scrollbar-track {
+  background: #95c11e;
+
+}
+body::-webkit-scrollbar-thumb {
+  background: #ffffff;
+  border-radius: 10px;
+  border: 3px solid rgba(150, 193, 30, 0.557);
+}
+body::-webkit-scrollbar-thumb:hover {
+  background: #f0f0f0;
+    border-radius: 10px;
+
+}
+
+/* .curser {
+  width: 25px;
+  height: 25px;
+  background-color: #95c11e;
+  border-radius: 30px;
+  position: fixed;
+  z-index: 99;
+  pointer-events: none;
+} */
+  /* transform: translateX(-50%) translateY(-50%); */
+
+
+
+
+
+.curserblur {
+  width: 300px;
+  height: 300px;
+  background-color: #96c11e60;
+  border-radius: 100%;
+  position: fixed;
+  pointer-events: none;
+  filter: blur(70px);
+
+}
+nav {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  padding: 5.5vw;
+  position: fixed;
+  padding-top: 2vw;
+  padding-bottom: 0px;
+  z-index: 99;
+  color: white;
+}
+nav img {
+  width: 11vw;
+  height: 13vh;
+
+}
+nav ul {
+  display: flex;
+  flex-direction: row;
+  gap: 22px;
+  list-style: none;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.navvideo video {
+  height: 130vh;
+  width: 100%;
+  object-fit: cover;
+  position: fixed;
+  z-index: -1;
+}
+.main {
+  color: white;
+}
+
+.page1 {
+  background-color: rgba(0, 0, 0, 0.38);
+  width: 100%;
+  height: 130vh;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.arrow{
+    height: 150px;
+    width: 150px;
+    background-color: transparent;
+    border: 2px solid #95c11e;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    left: -20px;
+    bottom: 60px;
+transition: all ease-in 0.5s;
+}
+.arrow i{
+    font-size: 40px;
+
+
+}
+.arrow:hover{
+    scale: 0.4;
+    background-color: #95c11e;
+}
+.page1 h1::before {
+  content: "Eat. Drink. Play.";
+  text-transform: uppercase;
+  position: absolute;
+  color: rgb(21, 20, 20);
+  left: -6px;
+  -webkit-text-stroke: 3px #95c11e;
+  z-index: -1;
+}
+.page1 h1 {
+  font-size: 90px;
+  font-weight: 1000;
+  text-transform: uppercase;
+  position: relative;
+}
+.page1 h2 {
+  font-size: 25px;
+  font-weight: 1000;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+}
+.page1 p {
+  font-size: 15px;
+  font-weight: 500;
+  width: 50%;
+}
+.page2 {
+  width: 100%;
+  min-height: 100vh;
+}
+.scroller-1 {
+  display: inline-block;
+  white-space: nowrap;
+  animation-name: scroll;
+  animation-duration: 30s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.scroller {
+  z-index: 10;
+  white-space: nowrap;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  /* Firefox */
+  scrollbar-width: 0; /* options: auto | thin | none */
+  position: relative;
+  /* IE/Edge legacy */
+}
+
+/* WebKit/Blink (Chrome, Edge, Safari) horizontal scrollbar styling */
+
+
+.scroller h4 {
+  display: inline-block;
+  font-size: 100px;
+  margin-right: 10px;
+  text-transform: uppercase;
+  font-weight: 900;
+  position: relative;
+  color: white;
+  transition: all linear 0.3s;
+}
+
+.scroller h4::before {
+  content: attr(data-text);
+  position: absolute;
+  left: -4px;
+  top: 0;
+  color: black;
+  -webkit-text-stroke: 2px #95c11e;
+  z-index: -1;
+}
+
+.scroller h4:hover {
+  color: #95c11e;
+}
+@keyframes scroll {
+  from {
+    transform: translate(0);
+  }
+  to {
+    transform: translate(-100%);
+  }
+}
+.page1-bottom {
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 32px;
+  padding-left: 40px;
+  padding-right: 40px;
+  position: relative;
+  z-index: 10;
+}
+.page1-bottom img {
+  width: 150px;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 12px;
+  opacity: 0.7;
+}
+.page2 .para {
+  text-align: center;
+  padding: 20px 0px;
+  padding-left: 90px;
+  padding-right: 90px;
+}
+.para p {
+  padding-top: 22px;
+}
+.para h1 {
+  font-size: 40px;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+.para p {
+  font-size: 17px;
+}
+.card-container {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  background-color: black;
+  padding-top: 50px;
+}
+
+.cards {
+  width: 24%;
+  height: 68vh;
+  border-radius: 14px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 10;
+  color: white;
+  /* opacity: 0.9; */
+  overflow: hidden;
+  transition: all ease-in 0.4s;
+}
+#card1 {
+  background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-toptracer-1024x682.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+
+  opacity: 0.8;
+}
+#card2 {
+  background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/hero-4-1024x1024.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+  opacity: 0.8;
+}
+#card3 {
+  background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-lessons-1024x682.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+  opacity: 0.8;
+}
+.overly {
+  padding: 20px 20px;
+  height: 100%;
+  width: 100%;
+  background-color: #95c11e;
+  color: black;
+  opacity: 0;
+  border-radius: 14px;
+  transition: all ease-in 0.4s;
+}
+.overly h1 {
+  font-weight: 900;
+}
+.overly p {
+  font-size: 18px;
+}
+.overly:hover {
+  opacity: 1;
+}
+/* card animation */
+.cards:hover {
+  /* x,y,z,kitna rotate */
+  transform: rotate3d(-1, 1, 0, 10deg);
+}
+
+#card1::before {
+  content: "TOPTRACER RANGE";
+  font-size: 30px;
+  text-transform: uppercase;
+  position: absolute;
+   font-weight: 900;
+  padding: 15px;
+  bottom: 0;
+
+  z-index: -1;
+}
+
+
+
+#card2::before {
+  content: "MR MOLLIgAN's ADVANTURE GOLF";
+  font-size: 30px;
+  text-transform: uppercase;
+  position: absolute;
+   font-weight: 900;
+  padding: 15px;
+  bottom: 0;
+
+  z-index: -1;
+}
+#card3::before {
+  content: "GOLF LESSONS";
+  font-size: 30px;
+  text-transform: uppercase;
+  position: absolute;
+   font-weight: 900;
+  padding: 15px;
+  bottom: 0;
+
+  z-index: -1;
+}
+
+#page3 {
+  height: 100vh;
+  width: 100%;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+  z-index: -1;
+}
+#page3 > p {
+  font-size: 30px;
+  font-weight: 500;
+  width: 60%;
+  line-height: 45px;
+  text-align: center;
+  color: white;
+}
+
+#page3 img {
+  position: absolute;
+  height: 60px;
+}
+#page3 #colon1 {
+  left: 9%;
+  top: 20%;
+}
+#page3 #colon2 {
+  bottom: 16%;
+  right: 14%;
+}
+#page4 {
+  height: 30vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+  position: relative;
+  background-color: #000;
+  z-index: -1;
+}
+.elem {
+  height: 70%;
+  width: 26%;
+  overflow: hidden;
+  border-radius: 20px;
+  position: relative;
+}
+
+.elem h2 {
+  height: 100%;
+  width: 100%;
+  background-color: #95c11e;
+  display: flex;
+  color: #000;
+  font-weight: 800;
+  align-items: center;
+  justify-content: center;
+  transition: all ease 0.5s;
+  font-size: 2vw;
+  position: absolute;
+  z-index: 99;
+}
+.elem img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: all ease 0.5s;
+  scale: 1.1;
+  z-index: 10;
+}
+.elem:hover h2 {
+  color: #fff;
+  background-color: transparent;
+}
+.elem:hover img {
+  scale: 1;
+}
+#page4 h1 {
+  font-size: 6vw;
+  position: absolute;
+  top: -29%;
+  font-weight: 900;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #000;
+  -webkit-text-stroke: 2px #fff;
+
+}
+
+#footer {
+  height: 40vh;
+  width: 100%;
+  background: linear-gradient(to left bottom, #119f3a 0%, #a3d421 80%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 6.5vw;
+  padding: 0 100px;
+}
+#footer > img {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  z-index: 0;
+}
+#f1 img {
+  height: 100px;
+}
+#f1,
+#f2,
+#f3,
+#f4 {
+  width: fit-content;
+  position: relative;
+  z-index: 99;
+  /* background-color: red; */
+}
+#f2 h3 {
+  font-size: 1.6vw;
+  white-space: nowrap;
+  text-transform: uppercase;
+  color: #000;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+
+#f3 h3 {
+  font-size: 1.6vw;
+  white-space: nowrap;
+  text-transform: uppercase;
+  color: #000;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+#f4 h4 {
+  font-size: 1vw;
+  white-space: nowrap;
+  text-transform: uppercase;
+  color: #000;
+  font-weight: 600;
+  line-height: 20px;
+  margin-bottom: 8px;
+}
